@@ -5,6 +5,8 @@ plugins {
 group 'hu.kzsolt'
 version '1.0-SNAPSHOT'
 
+mainClassName = "hu.kzsolt.Server"
+
 sourceCompatibility = 1.11
 
 repositories {
