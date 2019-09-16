@@ -4,8 +4,12 @@ node {
     stage('Download from git') {
         echo "Test"
     }
-   stage('Checkout'){
 
+   stage('Checkout') {
       checkout scm
+   }
+
+   stage('Build') {
+        sh "gradlew build"
    }
 }
