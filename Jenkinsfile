@@ -4,7 +4,7 @@
 pipeline {
   environment {
     dockerImage = "test"
-    registry = "http://172.17.0.2:5000"
+    registry = "172.17.0.2:5000"
   }
   agent any
   stages {
