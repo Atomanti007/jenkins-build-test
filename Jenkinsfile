@@ -3,6 +3,7 @@
 
 pipeline {
   environment {
+    dockerImage = "test"
     registry = "localhost:5000"
   }
   agent any
@@ -17,7 +18,7 @@ pipeline {
         script {
           sh "cd $WORKSPACE"
           echo "ls"
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + "/" + dockerImage + ":$BUILD_NUMBER"
         }
       }
     }
