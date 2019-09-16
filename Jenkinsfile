@@ -10,6 +10,7 @@ node {
    }
 
    stage('Build') {
+        sh "cd /var/jenkins_home/workspace/Build"
         sh "gradlew build"
    }
 }
