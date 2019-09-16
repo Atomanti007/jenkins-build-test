@@ -18,7 +18,7 @@ pipeline {
         script {
           sh "cd $WORKSPACE"
           sh "ls -l > commandResult"
-          dockerImage = docker.build registry + "/" + dockerImage + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + "/" + dockerImage + ":$BUILD_NUMBER -f $ORKSPACE ."
         }
       }
     }
