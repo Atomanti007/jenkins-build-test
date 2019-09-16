@@ -1,16 +1,37 @@
 #!groovy
 
-node {
-    stage('Download from git') {
-        echo "Test"
+
+pipeline {
+  environment {
+    registry = "localhost:5000"
+  }
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/Atomanti007/jenkins-build-test.git'
+      }
     }
-
-   stage('Checkout') {
-      checkout scm
-   }
-
-   stage('Build') {
-        sh "cd /var/jenkins_home/workspace/Build"
-        sh "./gradlew build"
-   }
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+        }
+      }
+    }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+  }
 }
