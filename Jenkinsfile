@@ -18,7 +18,7 @@ pipeline {
         script {
           sh "cd $WORKSPACE"
           echo "$WORKSPACE"
-          echo "$(ls)"
+          echo "$ls"
           dockerImage = docker.build registry + "/" + dockerImage + ":$BUILD_NUMBER"
         }
       }
