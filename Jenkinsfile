@@ -15,20 +15,7 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        script {
-          sh "cd $WORKSPACE"
-          sh "ls -l > commandResult"
-          dockerImage = docker.build registry + "/" + dockerImage + ":$BUILD_NUMBER -f $ORKSPACE ."
-        }
-      }
-    }
-    stage('Deploy Image') {
-      steps{
-        script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push()
-          }
-        }
+        sh "docker build -t $registry/test:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
     stage('Remove Unused docker image') {
