@@ -9,6 +9,7 @@ version '1.0-SNAPSHOT'
 mainClassName = "hu.kzsolt.Server"
 
 sourceCompatibility = 1.9
+targetCompatibility = 1.9
 
 repositories {
     mavenCentral()
