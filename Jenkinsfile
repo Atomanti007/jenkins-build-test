@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Gradle build') {
       steps{
-        sh "./gradlew build"
+        sh "gradle help --scan"
       }
     }
     stage('Building image') {
