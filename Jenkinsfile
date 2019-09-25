@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Gradle build') {
       steps{
-        sh "gradle build"
+        sh "./gradlew build"
       }
     }
     stage('Building image') {
