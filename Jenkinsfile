@@ -3,13 +3,12 @@
 
 pipeline {
   tools {
-    jdk 'JDK 9'
+    jdk 'openjdk-11'
   }
   environment {
     dockerImage = "test"
     registry = "localhost:2375"
   }
-  agent any
   stages {
     stage('Cloning Git') {
       steps {
