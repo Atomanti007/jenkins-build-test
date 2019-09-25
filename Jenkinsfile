@@ -15,9 +15,8 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        sh(returnStdout: true, script: "pwd")
         sh "pwd"
-        sh "echo pwd"
+        sh "ls"
         sh "docker build -t ${registry}/test:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
