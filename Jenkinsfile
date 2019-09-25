@@ -2,6 +2,9 @@
 
 
 pipeline {
+  agent{
+
+  }
   environment {
     dockerImage = "test"
     registry = "localhost:2375"
@@ -15,7 +18,7 @@ pipeline {
     }
     stage('Gradle build') {
       steps{
-        sh "gradle help --scan"
+        sh './gradlew clean test'
       }
     }
     stage('Building image') {
