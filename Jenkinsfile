@@ -20,6 +20,7 @@ pipeline {
     }
     stage('Remove Unused docker image') {
       steps{
+        sh "echo $(ls)"
         sh "docker rmi ${registry}/${dockerImage}:${BUILD_NUMBER}"
       }
     }
