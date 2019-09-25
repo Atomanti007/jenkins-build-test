@@ -25,7 +25,7 @@ pipeline {
     stage('Gradle build') {
       steps{
         sh "chmod +x gradlew"
-        sh './gradlew build'
+        sh './gradlew distTar'
       }
     }
     stage('Building image') {
