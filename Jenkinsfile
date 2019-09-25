@@ -18,7 +18,6 @@ pipeline {
         sh(returnStdout: true, script: "pwd")
         sh "pwd"
         sh "echo pwd"
-        sh "echo $(pwd)"
         sh "docker build -t ${registry}/test:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
