@@ -13,6 +13,11 @@ pipeline {
         git 'https://github.com/Atomanti007/jenkins-build-test.git'
       }
     }
+    stage('Gradle build') {
+      steps{
+        sh "gradle build"
+      }
+    }
     stage('Building image') {
       steps{
         sh "pwd"
