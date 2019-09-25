@@ -2,9 +2,6 @@
 
 
 pipeline {
-  agent{
-
-  }
   environment {
     dockerImage = "test"
     registry = "localhost:2375"
