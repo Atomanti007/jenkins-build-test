@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        sh "echo $ls"
+        sh(returnStdout: true, script: "ls")
         sh "docker build -t ${registry}/test:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
