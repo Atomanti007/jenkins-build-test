@@ -3,7 +3,7 @@
 
 pipeline {
   tools {
-    jdk 'JDK 11'
+    jdk 'JDK 9'
   }
   environment {
     dockerImage = "test"
@@ -32,7 +32,7 @@ pipeline {
       steps{
         sh "pwd"
         sh "ls"
-        sh "docker build -t ${registry}/test:${BUILD_NUMBER} -f Dockerfile ."
+        sh "docker build -t ${registry}/${dockerImage}:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
     stage('Remove Unused docker image') {
