@@ -16,10 +16,16 @@ pipeline {
         git 'https://github.com/Atomanti007/jenkins-build-test.git'
       }
     }
-    stage('Gradle build') {
+    stage('Test') {
       steps{
         sh "chmod +x gradlew"
         sh './gradlew clean test'
+      }
+    }
+    stage('Gradle build') {
+      steps{
+        sh "chmod +x gradlew"
+        sh './gradlew build'
       }
     }
     stage('Building image') {
