@@ -1,5 +1,5 @@
 FROM scratch
 
-COPY ./build/distributions/ .
+COPY .\build\distributions\ .
 
 CMD ["/bin/sh"]
