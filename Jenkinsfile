@@ -2,6 +2,9 @@
 
 
 pipeline {
+  tools {
+    jdk 'JDK 9'
+  }
   environment {
     dockerImage = "test"
     registry = "localhost:2375"
