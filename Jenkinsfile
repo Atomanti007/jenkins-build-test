@@ -15,12 +15,12 @@ pipeline {
     }
     stage('Building image') {
       steps{
-        sh "docker build -t $registry/test:${BUILD_NUMBER} -f Dockerfile ."
+        sh "docker build -t ${registry}/test:${BUILD_NUMBER} -f Dockerfile ."
       }
     }
     stage('Remove Unused docker image') {
       steps{
-        sh "docker rmi $registry/test:$BUILD_NUMBER"
+        sh "docker rmi ${registry}/${dockerImage}:${BUILD_NUMBER}"
       }
     }
   }
