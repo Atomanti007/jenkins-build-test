@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'java-library'
     id 'maven-publish'
+    id "org.ravinikam.swagger-codegen-plugin" version "0.1"
 }
 
 def props = new Properties()
@@ -13,8 +14,8 @@ version props.getProperty("app.version")
 
 mainClassName = "hu.kzsolt.Server"
 
-sourceCompatibility = 1.9
-targetCompatibility = 1.9
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
 jar {
     manifest {
@@ -32,6 +33,8 @@ repositories {
 
 dependencies {
     implementation group: 'com.google.inject', name: 'guice', version: '4.2.2'
+    compile group: 'com.webcerebrium', name: 'binance-api', version: '1.0.9'
+
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

@@ -3,7 +3,7 @@
 
 pipeline {
   tools {
-    jdk 'JDK 9'
+    jdk 'openjdk-11'
   }
   environment {
     dockerImage = "test"
