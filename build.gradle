@@ -14,8 +14,8 @@ version props.getProperty("app.version")
 
 mainClassName = "hu.kzsolt.Server"
 
-sourceCompatibility = 1.11
-targetCompatibility = 1.11
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 jar {
     manifest {
