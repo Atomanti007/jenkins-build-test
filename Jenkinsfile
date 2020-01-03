@@ -2,9 +2,6 @@
 
 
 pipeline {
-  tools {
-    jdk 'openjdk-11'
-  }
   environment {
     dockerImage = "test"
     registry = "localhost:2375"
