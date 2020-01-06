@@ -4,7 +4,7 @@
 pipeline {
   environment {
     dockerImage = "test"
-    registry = "localhost:2375"
+    registry = "zsolt.docker.registry:5000"
   }
   agent any
   stages {
